@@ -10,5 +10,8 @@
     "action": {
       "default_popup": "eepy.html",
       "default_icon": "Assets/eepyImage.png"
+    },
+    "background": {
+      "service_worker": "background.js"
     }
   }

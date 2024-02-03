@@ -20,6 +20,8 @@ function updateTime() {
     return timeRemaining;
 }
 
+/*
 while (true) {
     console.log(updateTime)
 }
+ */
