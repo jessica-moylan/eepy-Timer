@@ -1,7 +1,7 @@
-let timeRemaining = Number.MAX_VALUE;
+let secondsRemaining = Number.MAX_VALUE;
 
 // Placeholder to test code
-let bedtime = Math.round(new Date("2023/02/03 23:00:00").getTime()/1000)
+let bedtime = Math.round(new Date("2024/02/03 23:00:00").getTime()/1000)
 
 // Define a function to get the current time
 function getCurrentTime() {
@@ -12,16 +12,14 @@ function getCurrentTime() {
 function updateTime() {
     for (let i= 0; i < 60; i++) {
         setInterval( function() {
-                timeRemaining--;
+                secondsRemaining--;
             }
         )
     }
-    timeRemaining = bedtime - getCurrentTime();
-    return timeRemaining;
+    secondsRemaining = bedtime - getCurrentTime();
 }
 
-/*
-while (true) {
-    console.log(updateTime)
-}
- */
+setInterval( function() {
+    updateTime()
+    console.log(secondsRemaining)
+}, 1000)
