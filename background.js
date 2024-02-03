@@ -1,25 +1,31 @@
-let secondsRemaining = Number.MAX_VALUE;
+// Initialize global variables
+let secondsRemaining = getSecondsUntilMidnight();
 
-// Placeholder to test code
-let bedtime = Math.round(new Date("2024/02/03 23:00:00").getTime()/1000)
+// Set interval to update and print remaining seconds every second
+setInterval(updateAndPrintSecondsRemaining, 1000);
 
-// Define a function to get the current time
-function getCurrentTime() {
-   return Date.now() / 1000;  // Return Unix time in seconds
-}
+function updateAndPrintSecondsRemaining() {
+    // Decrement secondsRemaining
+    secondsRemaining--;
 
-// Define a function to update the time every second
-function updateTime() {
-    for (let i= 0; i < 60; i++) {
-        setInterval( function() {
-                secondsRemaining--;
-            }
-        )
+    // Print remaining seconds
+    console.log("Seconds until midnight:", secondsRemaining);
+
+    // Resync with the internal clock every 60 seconds
+    if (secondsRemaining <= 0 || secondsRemaining % 60 === 0) {
+        secondsRemaining = getSecondsUntilMidnight();
     }
-    secondsRemaining = bedtime - getCurrentTime();
 }
 
-setInterval( function() {
-    updateTime()
-    console.log(secondsRemaining)
-}, 1000)
+function getSecondsUntilMidnight() {
+    // Get current time
+    let now = new Date();
+
+    // Calculate time until midnight
+    let midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0); // Set to midnight of the next day
+
+    // Calculate difference in milliseconds and convert to seconds
+    let diffMilliseconds = midnight - now;
+    return Math.floor(diffMilliseconds / 1000);
+}

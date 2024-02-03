@@ -1,17 +1,17 @@
 {
-    "manifest_version": 3,
-    "name": "Hello Extensions",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "icons": {
-      "16": "Assets/icon-16.png",
-      "128": "Assets/icon-128.png"
-    },
-    "action": {
-      "default_popup": "eepy.html",
-      "default_icon": "Assets/eepyImage.png"
-    },
-    "background": {
-      "service_worker": "background.js"
-    }
+  "manifest_version": 3,
+  "name": "Hello Extensions",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "icons": {
+    "16": "Assets/icon-16.png",
+    "128": "Assets/icon-128.png"
+  },
+  "action": {
+    "default_popup": "eepy.html",
+    "default_icon": "Assets/eepyImage.png"
+  },
+  "background": {
+    "service_worker": "background.js"
   }
+}
