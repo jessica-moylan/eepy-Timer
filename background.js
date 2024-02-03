@@ -1,5 +1,9 @@
 // Initialize global variables
+
 let secondsRemaining = getSecondsUntilMidnight();
+chrome.storage.local.set({ "secondsRemaining": secondsRemaining }).then(() => {
+    console.log("Value is set");
+});
 
 // Set interval to update and print remaining seconds every second
 setInterval(updateAndPrintSecondsRemaining, 1000);
@@ -8,7 +12,8 @@ function updateAndPrintSecondsRemaining() {
     // Decrement secondsRemaining
     secondsRemaining--;
 
-    // Print remaining seconds
+    // Print remaining seconds.
+    // Change this to do something else as we progress.
     console.log("Seconds until midnight:", secondsRemaining);
 
     // Resync with the internal clock every 60 seconds
