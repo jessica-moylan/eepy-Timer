@@ -1,0 +1,2 @@
+# generate a gitignore that ignores all IDE config files
+.idea
