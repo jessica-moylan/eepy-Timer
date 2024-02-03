@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Overlay Image on Rectangle</title>
+</head>
+<style>
+  body {
+  margin: 0;
+  overflow: hidden; /* to prevent scrollbars */
+}
+
+.container {
+  position: relative;
+}
+
+.rectangle {
+  position: absolute;
+  width: 300px; /* Set the width of your rectangle */
+  height: 400px; /* Set the height of your rectangle */
+  background-color: #8c2525; /* Set the background color of your rectangle */
+  top: 0px; /* Adjust the top position as needed */
+  left: 0px; /* Adjust the left position as needed */
+  z-index: 0; /* Set a z-index to make sure the rectangle is behind the image */
+}
+
+.rectangle1{
+  position: absolute;
+  width: 280px; /* Set the width of your rectangle */
+  height: 380px; /* Set the height of your rectangle */
+  background-color: #9DF6FF; /* Set the background color of your rectangle */
+  top: 8px; /* Adjust the top position as needed */
+  left: 8px; /* Adjust the left position as needed */
+  z-index: 1; /* Set a z-index to make sure the rectangle is behind the image */
+}
+
+.overlay-image {
+  position: absolute;
+  top: 20px; /* Adjust the top position to match the rectangle */
+  left: 70px; /* Adjust the left position to match the rectangle */
+  z-index: 2; /* Set a higher z-index to make sure the image is on top of the rectangle */
+}
+
+</style>
+<body>
+  <div class="container">
+    <div class="rectangle"></div>
+    <div class="rectangle1"></div>
+    <h1> DRINK WATER</h1>
+    <img src="./drinking water.png" id="hydrateImage" class="overlay-image">
+  </div>
+</body>
+</html>
