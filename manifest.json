@@ -1,19 +1,4 @@
 {
-<<<<<<< HEAD
-    "manifest_version": 3,
-    "name": "Hello Extensions",
-    "description": "Base Level Extension",
-    "permissions": ["tabs"],
-    "version": "1.0",
-    "icons": {
-      "16": "Assets/icon-16.png",
-      "128": "Assets/icon-128.png"
-    },
-    "action": {
-      "default_popup": "eepy.html",
-      "default_icon": "Assets/eepyImage.png"
-    },
-=======
   "manifest_version": 3,
   "name": "Hello Extensions",
   "description": "Base Level Extension",
@@ -31,7 +16,6 @@
     "default_popup": "eepy.html",
     "default_icon": "Assets/eepyImage.png"
   },
->>>>>>> 1e13cfc (Add permissions for chrome.storage API)
   "background": {
     "service_worker": "background.js"
   }
