@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        .rectangle1 {
+            width: 800px;
+            height: 600px;
+            top: 100px;
+            left: 350px; 
+            background-color: rgba(89, 102, 105);
+            position: absolute;
+            z-index: 1
+        }
+        .rectangle2 {
+            width: 600px;
+            height: 250px;
+            background-color: rgb(243, 222, 138);
+            top: 175px; 
+            left: 450px; 
+            position: absolute;
+            z-index: 2
+        }
+        .overlay-text {
+            position: absolute;
+            top: 60px; 
+            left: 600px; 
+            color: #FCC7FF; 
+            font-size: 50px; 
+            z-index: 3
+        }
+        .blood {
+            color:silver;
+            text-shadow:
+            4px 4px 1px #302d00,
+            4px 6px 1px #403d00,
+            4px 8px 1px #504900,
+            4px 10px 1px #5d6000,
+            4px 12px 1px #706e00,
+            4px 14px 1px #807a00,
+            4px 16px 1px #908900,
+            4px 18px 1px #9da000,
+            4px 20px 1px #b0ad00,
+            4px 22px 1px #c0bd00,
+            4px 24px 1px #d0cd00,
+            4px 26px 1px #e0d800;
+            position: absolute;
+            top: 400px; 
+            left: 450px; 
+            font-size: 50px; 
+            z-index: 3
+    }
+        .button {
+            border: none;
+            color: #FCC7FF;
+            background: #473365;
+            display: inline-block;
+            font-size: 30px;
+            margin: 4px 2px;
+            cursor: pointer;
+            position: relative;
+            top: 600px;
+            left: 525px;
+            z-index: 2;
+}
+        .time1 {
+            position: absolute;
+            top: 2px; 
+            left: 525px; 
+            color: #300732; 
+            font-size: 175px; 
+            z-index: 3;
+        }
+
+.button1 {background-color: #FCC7FF;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style = "border-radius: 40px" class ="rectangle1"></div>
+        <div style = "border-radius: 40px" class="rectangle2"></div>
+        <p style = "font-family: cursive;" class = "overlay-text"> EEPY TIMER </p>
+        <p style = "font-family: cursive;" class = "time1"> 00:00 </p>
+        <h1 style = "font-family: cursive;" class="blood">Don't make Eepy mad and <br>
+            GO TO BED!</h1>
+<button style = "border-radius: 40px" style = "font-family: cursive;" class="button" onclick="alert('Your sleep time has been moved back 10 minutes.')">Delay sleep time for 10 minutes</button>
+    </div>
+</body>
+</html>
