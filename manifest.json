@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "Hello Extensions",
-    "description": "Base Level Extension",
+    "name": "PalWare (not a virus)",
+    "description": "Do you want to take care of your health? Welcome to PalWare (not a virus)! This simple extension works to help you get to sleep on time. Make sure to say when you want to go to bed and make sure you aren't on your computer close to bed time :) \n\n Diaclaimer: we are not liable for any lost work that occurs. You are the one who was still awake :D",
     "version": "1.0",
     "action": {
       "default_popup": "eepy.html",
