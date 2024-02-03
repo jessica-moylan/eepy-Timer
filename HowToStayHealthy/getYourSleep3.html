@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Overlay Image on Rectangle</title>
+</head>
+<style>
+  body {
+  margin: 0;
+  overflow: hidden; /* to prevent scrollbars */
+}
+
+.container {
+  position: relative;
+}
+
+.rectangle {
+  position: absolute;
+  width: 300px; /* Set the width of your rectangle */
+  height: 400px; /* Set the height of your rectangle */
+  background-color: #192021; /* Set the background color of your rectangle */
+  top: 0px; /* Adjust the top position as needed */
+  left: 0px; /* Adjust the left position as needed */
+  z-index: 0; /* Set a z-index to make sure the rectangle is behind the image */
+}
+
+.rectangle1{
+  position: absolute;
+  width: 280px; /* Set the width of your rectangle */
+  height: 380px; /* Set the height of your rectangle */
+  background-color: #6B1D0B; /* Set the background color of your rectangle */
+  top: 8px; /* Adjust the top position as needed */
+  left: 8px; /* Adjust the left position as needed */
+  z-index: 1; /* Set a z-index to make sure the rectangle is behind the image */
+}
+
+.rectangle3{
+  position: absolute;
+  width: 150px; /* Set the width of your rectangle */
+  height: 50px; /* Set the height of your rectangle */
+  background-color: #ffffff; /* Set the background color of your rectangle */
+  top: 10px; /* Adjust the top position as needed */
+  left: 10px; /* Adjust the left position as needed */
+  z-index: 2; /* Set a z-index to make sure the rectangle is behind the image */
+}
+
+.crop-container {
+    width: 265px;
+    height: auto;
+    overflow: hidden;
+}
+.crop-container img {
+    content: -200px;
+}
+.overlay-image {
+  position: absolute;
+  top: 15px; /* Adjust the top position to match the rectangle */
+  left: 15px; /* Adjust the left position to match the rectangle */
+  z-index: 2; /* Set a higher z-index to make sure the image is on top of the rectangle */
+}
+
+.overlay-text {
+  position: absolute;
+  top: 160px; /* Adjust the top position to position the text below the rectangle */
+  left: 45px; /* Adjust the left position to position the text below the rectangle */
+  font-size: 20px; /* Set the font size */
+  z-index: 3; /* Set a higher z-index to make sure the text is on top of the rectangle and image */
+}
+
+.overlay-text1 {
+  position: absolute;
+  top: 200px; /* Adjust the top position to position the text below the rectangle */
+  left: 70px; /* Adjust the left position to position the text below the rectangle */
+  font-size: 40px; /* Set the font size */
+  z-index: 3; /* Set a higher z-index to make sure the text is on top of the rectangle and image */
+}
+
+.overlay-text2 {
+  position: absolute;
+  top: 215px; /* Adjust the top position to position the text below the rectangle */
+  left: 45px; /* Adjust the left position to position the text below the rectangle */
+  font-size: 28px; /* Set the font size */
+  z-index: 3; /* Set a higher z-index to make sure the text is on top of the rectangle and image */
+}
+</style>
+<body>
+  <div class="container">
+    <div class="rectangle"></div>
+    <div class="rectangle1"></div>
+    <h1 class = "overlay-text"> YOU WANT ENERGY? </h1>
+    <h2 class = "overlay-text1"> S̵̡̧̨̡̢̡̡͚͎͍͍̖̳̥̳̲̞̪̻̬̯̺̦͇͚͇̫̰̼̳̩͓͚͉̹̟̫͎̫̮̬̱̖̜̙͙̺̲͎̰̱͙̱̯̠̦̳̦̪̟̪̼̥̖̻͚̄͐̀̋̊́̂͊̒̽̽̊̿͋̄̓̍͒̈́͐͒̒̈́͛̒̾̈́̚͜͜͝͝͝͠ͅͅͅͅͅL̵̨̢̢̺̯͙̥͎̰͉͖̰͓̥̯͚̜͉̖̤̐͑̏͗̌̄́̂̎̀̀̄͌̃̓͂̽̉̎̈́̀͌̽̈́͗̀̾́͆̅̂͊̌́̃̂͑̕̚̕͜͜͝͝͝Ȩ̵̨̨̧̡̡̢̨̨̨̖̦̖̭̠̙̝̼̪̲̖͕̮̰̣̪̩̼̗͈͈̠̼̻̮̹͚͎̭͙̠͓̦͖͉̥͇̭͙̙̻͍̗̹̰͎̦͚͚̞̲̲̬͖̮͔̼͚̤̞̣̭̭̥̦̼́̐͂̉̃͘͜͜͠͝ͅͅE̷̡̧̧̡̢̢̫̻̯͎͈͇͍̞̖̣̮͖̬̟̥͇̱̟͚̲͍̗̣̟͇͎͕̰̤̤̼̬̖̯̙̜̣̘̣̝̠̞͎̩̰̜̠̜̫̮͖͚̟͙̬̲͎͂̿̍̉̑̎̒̾̀͋̾̂͗̃̕͜͜ͅͅṔ̸̢̨̢̨̗̪͙̘̮̼̝̬̰̜̩͓͕͔̺͈͍̪̮̝̩̗̟͖̤͖̫͖̮̼͔̜̳̮̱͚̼̐̃͜ͅ</h2>
+    <p class = "overlay-text3"> *the FDA reccomends 8 hrs of sleep a night </p>
+    <img src="./stickman-flip.gif" id="parkour" class="overlay-image crop-container" width="400" 
+    height="auto" >
+  </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Overlay Image on Rectangle</title>
+</head>
+<style>
+  .blood {
+    color:#ffffff;
+    text-shadow:
+    4px 4px 1px #300000,
+    4px 6px 1px #400000,
+    4px 8px 1px #500000,
+    4px 10px 1px #600000,
+    4px 12px 1px #700000,
+    4px 14px 1px #800000,
+    4px 16px 1px #900000,
+    4px 18px 1px #A00000,
+    4px 20px 1px #B00000,
+    4px 22px 1px #C00000,
+    4px 24px 1px #D00000,
+    4px 26px 1px #E00000,
+    4px 28px 1px #F00000,
+    4px 30px 1px #FA0000,
+    4px 32px 1px #FB0000,
+    4px 34px 1px #FC0000,
+    4px 36px 1px #FD0000,
+    4px 38px 1px #FE0000,
+    4px 40px 2px #FF0000;
+}
+  body {
+  margin: 0;
+  overflow: hidden; /* to prevent scrollbars */
+}
+
+.container {
+  position: relative;
+}
+
+.rectangle {
+  position: absolute;
+  width: 300px; /* Set the width of your rectangle */
+  height: 400px; /* Set the height of your rectangle */
+  background-color: #473364; /* Set the background color of your rectangle */
+  top: 0px; /* Adjust the top position as needed */
+  left: 0px; /* Adjust the left position as needed */
+  z-index: 0; /* Set a z-index to make sure the rectangle is behind the image */
+}
+
+.rectangle1{
+  position: absolute;
+  width: 280px; /* Set the width of your rectangle */
+  height: 380px; /* Set the height of your rectangle */
+  background-color: #Fcc7ff; /* Set the background color of your rectangle */
+  top: 8px; /* Adjust the top position as needed */
+  left: 8px; /* Adjust the left position as needed */
+  z-index: 1; /* Set a z-index to make sure the rectangle is behind the image */
+}
+
+.overlay-image {
+  position: absolute;
+  top: 20px; /* Adjust the top position to match the rectangle */
+  left: 70px; /* Adjust the left position to match the rectangle */
+  z-index: 2; /* Set a higher z-index to make sure the image is on top of the rectangle */
+}
+
+.overlay-text {
+  position: absolute;
+  top: 150px; /* Adjust the top position to position the text below the rectangle */
+  left: 30px; /* Adjust the left position to position the text below the rectangle */
+  font-size: 32px; /* Set the font size */
+  z-index: 3; /* Set a higher z-index to make sure the text is on top of the rectangle and image */
+}
+
+.overlay-text1 {
+  position: absolute;
+  top: 180px; /* Adjust the top position to position the text below the rectangle */
+  left: 110px; /* Adjust the left position to position the text below the rectangle */
+  font-size: 32px; /* Set the font size */
+  z-index: 4; /* Set a higher z-index to make sure the text is on top of the rectangle and image */
+}
+
+.overlay-text2 {
+  position: absolute;
+  top: 215px; /* Adjust the top position to position the text below the rectangle */
+  left: 65px; /* Adjust the left position to position the text below the rectangle */
+  font-size: 32px; /* Set the font size */
+  z-index: 4; /* Set a higher z-index to make sure the text is on top of the rectangle and image */
+}
+.overlay-text3 {
+  position: absolute;
+  top: 350px; /* Adjust the top position to position the text below the rectangle */
+  left: 10px; /* Adjust the left position to position the text below the rectangle */
+  font-size: 15px; /* Set the font size */
+  z-index: 3; /* Set a higher z-index to make sure the text is on top of the rectangle and image */
+}
+</style>
+<body>
+  <div class="container">
+    <div class="rectangle"></div>
+    <div class="rectangle1"></div>
+    <h1 class = "overlay-text"> DRINK WATER </h1>
+    <h2 class = "overlay-text1"> or be</h2>
+    <h2 class = "overlay-text2 blood"> P̵̢̝̤̯̞̥̝̯̜̔̓̽̀̐̂̎̽̓͑̍̎̈́̉͜͝Ä̴̺̠̩̳̦̼̥̠͖̩̤̜́̓͂̿͜R̷̡̧̢̮̘̙̠̻̤̮̳̼̣̼̭̣͖̤̰͕̺̼͔̫̆͊͜Ç̶̨̧͚̰͚͚̗̦͉̮͙̘̻̘̙̤͎͍̳͌̄͗̽̽͐͐͛͂̿̎̔̄̈̏̅̈́͗̒͑̿̏̌̇̈͊̚ͅH̴̢̛̲̳̲͚͖͍͚̗͖͎̳̗̲̰̯͛͋͊̄͌̾̇͂̂̂͂̈́̽͜͝͝ͅͅE̶̢̧̢̱͖͕͎̗̤̦̗̠͖͙̝̥̖͇͍̗̺̟̍̚͜D̸̨̧̨̡̲͚̣̼̘͈̻͎̬̺̰͓̱̭̠͛̓̐̒̂͛̆̋́̋͐̎̊̊͘͜͠/<h2>
+    <p class = "overlay-text3"> *you should drink 8 glasses of water a day :D</p>
+    <img src="./drinking water.png" id="hydrateImage" class="overlay-image">
+  </div>
+</body>
+</html>

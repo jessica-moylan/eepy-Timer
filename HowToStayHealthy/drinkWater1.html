@@ -7,6 +7,29 @@
   <title>Overlay Image on Rectangle</title>
 </head>
 <style>
+  .blood {
+    color:#ffffff;
+    text-shadow:
+    4px 4px 1px #300000,
+    4px 6px 1px #400000,
+    4px 8px 1px #500000,
+    4px 10px 1px #600000,
+    4px 12px 1px #700000,
+    4px 14px 1px #800000,
+    4px 16px 1px #900000,
+    4px 18px 1px #A00000,
+    4px 20px 1px #B00000,
+    4px 22px 1px #C00000,
+    4px 24px 1px #D00000,
+    4px 26px 1px #E00000,
+    4px 28px 1px #F00000,
+    4px 30px 1px #FA0000,
+    4px 32px 1px #FB0000,
+    4px 34px 1px #FC0000,
+    4px 36px 1px #FD0000,
+    4px 38px 1px #FE0000,
+    4px 40px 2px #FF0000;
+}
   body {
   margin: 0;
   overflow: hidden; /* to prevent scrollbars */
@@ -56,7 +79,7 @@
   top: 180px; /* Adjust the top position to position the text below the rectangle */
   left: 110px; /* Adjust the left position to position the text below the rectangle */
   font-size: 32px; /* Set the font size */
-  z-index: 3; /* Set a higher z-index to make sure the text is on top of the rectangle and image */
+  z-index: 4; /* Set a higher z-index to make sure the text is on top of the rectangle and image */
 }
 
 .overlay-text2 {
@@ -64,7 +87,7 @@
   top: 215px; /* Adjust the top position to position the text below the rectangle */
   left: 65px; /* Adjust the left position to position the text below the rectangle */
   font-size: 32px; /* Set the font size */
-  z-index: 3; /* Set a higher z-index to make sure the text is on top of the rectangle and image */
+  z-index: 4; /* Set a higher z-index to make sure the text is on top of the rectangle and image */
 }
 .overlay-text3 {
   position: absolute;
@@ -80,7 +103,7 @@
     <div class="rectangle1"></div>
     <h1 class = "overlay-text"> DRINK WATER </h1>
     <h2 class = "overlay-text1"> or be</h2>
-    <h2 class = "overlay-text2"> PARCHED</h2>
+    <h2 class = "overlay-text2 blood"> PARCHED<h2>
     <p class = "overlay-text3"> *you should drink 8 glasses of water a day :D</p>
     <img src="./drinking water.png" id="hydrateImage" class="overlay-image">
   </div>
