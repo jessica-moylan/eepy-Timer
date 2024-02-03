@@ -29,3 +29,28 @@ function getSecondsUntilMidnight() {
     let diffMilliseconds = midnight - now;
     return Math.floor(diffMilliseconds / 1000);
 }
+
+
+//define tab moving function
+function moveRandomTab(){
+    chrome.tabs.query({},function(tabs){
+        tabPos = Math.floor(Math.random()*tabs.length());
+        newTabPos = Math.floor(Math.random()*tabs.length());
+        moveTab(tabs[tabPos],newTabPos);
+    });
+}
+
+
+//Code taken from https://github.com/mohnish/rearrange-tabs/blob/main/rearrange.js
+
+function moveTab(id, pos) {
+    chrome.tabs.move(id, { index: pos });
+}
+  
+function moveTabs(tabs) {
+    for (let [id, pos] of tabs) {
+      moveTab(id, pos);
+    }
+}
+
+
