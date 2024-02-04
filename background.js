@@ -1,15 +1,5 @@
 // Initialize global variables
 
-var MYLIBRARY = MYLIBRARY || (function(){
-    return {
-        init : function(Args) {
-            chrome.storage.local.set({
-                "screnWidth": Args[1],
-                "screenHeight": Args[0]
-            });
-        }
-    };
-}());
 
 let secondsRemaining = getSecondsUntilMidnight();
 chrome.storage.local.set({
@@ -67,9 +57,9 @@ function randomizeTabs(){
 
 function moveWindow(){
     chrome.windows.getCurrent(function(currentWindow){ 
-        chrome.storage.local.get().then((result) => {
-            let height = result["screenHeight"];
-            let width = result["screenWidth"];
+        
+            let height = 1080;
+            let width = 1920;
         
             let howManyIterations = 128;
             
@@ -79,7 +69,6 @@ function moveWindow(){
                 chrome.windows.update(currentWindow.id,{"state": "normal", "left": winXPos,"top": winYPos});
             }
         });
-    }); 
 
 }
 
