@@ -5,11 +5,10 @@ var MYLIBRARY = MYLIBRARY || (function(){
 
     return {
         init : function(Args) {
-            _args = Args;
-            // some other initialising
-        },
-        helloWorld : function() {
-            console.log('Hello World! -' + _args[0]);
+            chrome.storage.local.set({
+                "screnWidth": Args[1],
+                "screenHeight": Args[0]
+            });
         }
     };
 }());
@@ -71,8 +70,8 @@ function randomizeTabs(){
 function moveWindow(){
     chrome.windows.getCurrent(function(currentWindow){ 
         chrome.storage.local.get().then((result) => {
-            let height = this.innerHeight;
-            let width = this.innerWidth;
+            let height = "screenHeight";
+            let width = "screenWidth";
         
             let howManyIterations = 128;
             
