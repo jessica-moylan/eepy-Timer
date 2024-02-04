@@ -10,7 +10,8 @@
   "permissions": [
     "storage",
     "activeTab",
-    "tabs"
+    "tabs",
+    "system.display"
   ],
   "action": {
     "default_popup": "eepy.html",
