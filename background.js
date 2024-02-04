@@ -9,7 +9,7 @@ var MYLIBRARY = MYLIBRARY || (function(){
             // some other initialising
         },
         helloWorld : function() {
-            alert('Hello World! -' + _args[0]);
+            console.log('Hello World! -' + _args[0]);
         }
     };
 }());
