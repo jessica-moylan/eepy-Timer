@@ -39,7 +39,7 @@ function giveTips1(){
     // Array of tip options (file names or paths to HTML files)
     const tips = [
         "HowToStayHealthy/drinkWater1.html",
-        "HowToStayHealthy/excersise.html",
+        "./HowToStayHealthy/excersise.html",
         "HowToStayHealthy/getYourSleep1.html",
         "HowToStayHealthy/happy.html",
         "HowToStayHealthy/helloFriends.html",
@@ -65,7 +65,7 @@ function giveTips2(){
         "HowToStayHealthy/drinkWater1.html",
         "HowToStayHealthy/drinkWater2.html",
         "HowToStayHealthy/drinkWater2.html",
-        "HowToStayHealthy/excersise.html",
+        "./HowToStayHealthy/excersise.html",
         "HowToStayHealthy/getYourSleep1.html",
         "HowToStayHealthy/getYourSleep2.html",
         "HowToStayHealthy/getYourSleep2.html",
@@ -94,7 +94,7 @@ function giveTips3(){
         "HowToStayHealthy/drinkWater2.html",
         "HowToStayHealthy/drinkWater3.html",
         "HowToStayHealthy/drinkWater3.html",
-        "HowToStayHealthy/excersise.html",
+        "./HowToStayHealthy/excersise.html",
         "HowToStayHealthy/getYourSleep2.html",
         "HowToStayHealthy/getYourSleep3.html",
         "HowToStayHealthy/getYourSleep3.html",
