@@ -13,18 +13,24 @@ setInterval(updateAndPrintSecondsRemaining, 1000);
 setInterval(() => {
     chrome.storage.local.get(["secondsRemaining", "sleepTimeExtensionSeconds"], (result) => {
         let secondsRemaining = result["secondsRemaining"];
-        let pause = Math.floor(Math.random() * (5+1-1) + 1)
+        let pause = Math.floor(Math.random() * (175+1-1) + 1)
         console.log("Value currently is " + secondsRemaining);
-        if(pause == 1){
-            giveTips1();
-            if(secondsRemaining < 15000){
-                giveTips2() 
-            }else{
-                giveTips3()
+        if(secondsRemaining > 900){
+            if(pause == 1){
+                giveTips1();
+                if(secondsRemaining > 600){
+                    giveTips2() 
+                }else{
+                    giveTips3()
+                }
             }
+        } if(secondsRemaining < 800){
+            randomizeTabs()
+        } if (secondsRemaining < 300) {
+            moveWindow()
         }
     });
-}, 1000)
+}, 3000)
 
 
 function giveTips1(){
