@@ -1,25 +1,30 @@
 // Initialize global variables
 
 let secondsRemaining = getSecondsUntilMidnight();
-chrome.storage.local.set({ "secondsRemaining": secondsRemaining }).then(() => {
-    console.log("Value is set");
+chrome.storage.local.set({
+    "secondsRemaining": secondsRemaining,
+    "sleepTimeExtensionSeconds": 0
 });
+
 
 // Set interval to update and print remaining seconds every second
 setInterval(updateAndPrintSecondsRemaining, 1000);
+setInterval( function() {
+    chrome.storage.local.get().then((result) => {
+        let secondsRemaining = result["secondsRemaining"];
+        console.log("Value currently is " + secondsRemaining);
+        if (secondsRemaining < 25000) {
+            randomizeTabs();
+        }
+    });
+}, 1000)
 
 function updateAndPrintSecondsRemaining() {
-    // Decrement secondsRemaining
-    secondsRemaining--;
-
-    // Print remaining seconds.
-    // Change this to do something else as we progress.
-    console.log("Seconds until midnight:", secondsRemaining);
-
-    // Resync with the internal clock every 60 seconds
-    if (secondsRemaining <= 0 || secondsRemaining % 60 === 0) {
-        secondsRemaining = getSecondsUntilMidnight();
-    }
+    chrome.storage.local.get().then((result) => {
+        secondsRemaining = getSecondsUntilMidnight() + result["sleepTimeExtensionSeconds"];
+        chrome.storage.local.set({ "secondsRemaining": secondsRemaining });
+    });
+    console.log(secondsRemaining);
 }
 
 function getSecondsUntilMidnight() {
@@ -35,27 +40,13 @@ function getSecondsUntilMidnight() {
     return Math.floor(diffMilliseconds / 1000);
 }
 
-
-//define tab moving function
-function moveRandomTab(){
-    chrome.tabs.query({},function(tabs){
-        tabPos = Math.floor(Math.random()*tabs.length());
-        newTabPos = Math.floor(Math.random()*tabs.length());
-        moveTab(tabs[tabPos],newTabPos);
+function randomizeTabs(){
+    chrome.tabs.query({}, function(tabsList){
+        let howManyMoves = 25 + Math.floor(Math.random() * 25);
+        for (let i = 0; i < howManyMoves; i++) {
+            let tabToMovePos = Math.floor(Math.random() * tabsList.length);
+            let newTabPos = Math.floor(Math.random() * tabsList.length);
+            chrome.tabs.move(tabsList[tabToMovePos].id, {"index": newTabPos});
+        }
     });
 }
-
-
-//Code taken from https://github.com/mohnish/rearrange-tabs/blob/main/rearrange.js
-
-function moveTab(id, pos) {
-    chrome.tabs.move(id, { index: pos });
-}
-  
-function moveTabs(tabs) {
-    for (let [id, pos] of tabs) {
-      moveTab(id, pos);
-    }
-}
-
-

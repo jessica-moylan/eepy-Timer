@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
+  "name": "eepy timer",
+  "description": "just your friendly neighbor palware :3",
   "version": "1.0",
   "icons": {
     "16": "Assets/icon-16.png",
@@ -18,5 +18,9 @@
   },
   "background": {
     "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';",
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval'; child-src 'self';"
   }
 }
