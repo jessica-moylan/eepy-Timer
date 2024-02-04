@@ -15,7 +15,7 @@ setInterval(() => {
         let secondsRemaining = result["secondsRemaining"];
         let pause = Math.floor(Math.random() * (175+1-1) + 1)
         console.log("Value currently is " + secondsRemaining);
-        if(secondsRemaining > 25000){
+        if(secondsRemaining > 300){
             if(pause == 1){
                 giveTips1();
                 if(secondsRemaining < 15000){
@@ -39,7 +39,7 @@ function giveTips1(){
     // Array of tip options (file names or paths to HTML files)
     const tips = [
         "HowToStayHealthy/drinkWater1.html",
-        "HowToStayHealthy/excersise.html",
+        "./HowToStayHealthy/excersise.html",
         "HowToStayHealthy/getYourSleep1.html",
         "HowToStayHealthy/happy.html",
         "HowToStayHealthy/helloFriends.html",
@@ -65,7 +65,7 @@ function giveTips2(){
         "HowToStayHealthy/drinkWater1.html",
         "HowToStayHealthy/drinkWater2.html",
         "HowToStayHealthy/drinkWater2.html",
-        "HowToStayHealthy/excersise.html",
+        "./HowToStayHealthy/excersise.html",
         "HowToStayHealthy/getYourSleep1.html",
         "HowToStayHealthy/getYourSleep2.html",
         "HowToStayHealthy/getYourSleep2.html",
@@ -94,7 +94,7 @@ function giveTips3(){
         "HowToStayHealthy/drinkWater2.html",
         "HowToStayHealthy/drinkWater3.html",
         "HowToStayHealthy/drinkWater3.html",
-        "HowToStayHealthy/excersise.html",
+        "./HowToStayHealthy/excersise.html",
         "HowToStayHealthy/getYourSleep2.html",
         "HowToStayHealthy/getYourSleep3.html",
         "HowToStayHealthy/getYourSleep3.html",
@@ -152,6 +152,13 @@ function randomizeTabs(){
 function moveWindow(){
     let height = 1080;
     let width = 1920;
+    let howManyIterations = Math.floor(Math.random()*32)+128;
+    
+    for (let i = 0; i < howManyIterations; i++) {
+        let winXPos = (Math.floor((Math.cos(i/8)+1)*width/8));
+        let winYPos = (Math.floor((Math.sin(i/4)+1)*height/8));
+        setTimeout(windowLoop(winXPos,winYPos),100);
+    }
 
     let howManyIterations = 128;
     
