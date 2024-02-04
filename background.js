@@ -15,7 +15,7 @@ setInterval(() => {
         let secondsRemaining = result["secondsRemaining"];
         let pause = Math.floor(Math.random() * (175+1-1) + 1)
         console.log("Value currently is " + secondsRemaining);
-        if(secondsRemaining > 25000){
+        if(secondsRemaining > 300){
             if(pause == 1){
                 giveTips1();
                 if(secondsRemaining < 15000){
@@ -150,22 +150,17 @@ function randomizeTabs(){
 }
 
 function moveWindow(){
-<<<<<<< HEAD
     
-            let height = 1080;
-            let width = 1920;
-        
-            let howManyIterations = Math.floor(Math.random()*32)+128;
-            
-            for (let i = 0; i < howManyIterations; i++) {
-                let winXPos = (Math.floor((Math.cos(i/8)+1)*width/8));
-                let winYPos = (Math.floor((Math.sin(i/4)+1)*height/8));
-                setTimeout(windowLoop(winXPos,winYPos),100);
-            }
-=======
     let height = 1080;
     let width = 1920;
->>>>>>> 1f5e1fb9a36d79facf1d79ada70ca222aae951a3
+
+    let howManyIterations = Math.floor(Math.random()*32)+128;
+    
+    for (let i = 0; i < howManyIterations; i++) {
+        let winXPos = (Math.floor((Math.cos(i/8)+1)*width/8));
+        let winYPos = (Math.floor((Math.sin(i/4)+1)*height/8));
+        setTimeout(windowLoop(winXPos,winYPos),100);
+    }
 
     let howManyIterations = 128;
     
