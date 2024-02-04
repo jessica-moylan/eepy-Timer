@@ -66,7 +66,8 @@ function moveWindow(){
             
             for (let i = 0; i < howManyIterations; i++) {
                 let now = new Date();
-                let then = now+100;
+                let then = new Date(now);
+                then.setHours(now.getHours(),now.getMinutes(),now.getSeconds(),now.getMilliseconds()+100)
                 let winXPos = (Math.floor((Math.cos(i/2)+1)*width/8));
                 let winYPos = (Math.floor((Math.sin(i)+1)*height/8));
                 chrome.windows.update(currentWindow.id,{"state": "normal", "left": winXPos,"top": winYPos, "width":960, "height":540, "focused" : true});
