@@ -24,11 +24,12 @@ setInterval(() => {
                     giveTips3()
                 }
             }
-        } else if(secondsRemaining > 800){
+        } if(secondsRemaining < 1800){
             randomizeTabs()
-        } else if (secondsRemaining > 300){
+        } if (secondsRemaining < 1000){
             moveWindow()
-        }else{
+            
+        }if (secondsRemaining < 300){
             removeTabs()
         }
     });
