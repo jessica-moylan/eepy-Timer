@@ -57,8 +57,8 @@ function randomizeTabs(){
 function moveWindow(){
     chrome.windows.getCurrent(function(currentWindow){ 
         chrome.storage.local.get().then((result) => {
-            let height = result["screenHeight"];
-            let width = result["screenWidth"];
+            let height = this.innerHeight;
+            let width = this.innerWidth;
         
             let howManyIterations = 128;
             
