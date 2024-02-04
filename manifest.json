@@ -14,7 +14,7 @@
       "system.display"
     ],
     "action": {
-      "default_popup": "eepy.html",
+      "default_popup": "clock.html",
       "default_icon": "Assets/eepyImage.png"
     },
     "background": {

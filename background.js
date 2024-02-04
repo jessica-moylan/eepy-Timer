@@ -13,15 +13,8 @@ setInterval( function() {
     chrome.storage.local.get().then((result) => {
         let secondsRemaining = result["secondsRemaining"];
         console.log("Value currently is " + secondsRemaining);
-        if (secondsRemaining > 25000) {
-            giveTips();
-        }
-        else if (secondsRemaining < 25000) {
-            randomizeTabs();
-        }
-        else if((secondsRemaining < 10000) && (secondsRemaining % 10 == 0)){
-        moveWindow()
-        }
+                giveTips();
+
     });
 }, 1000)
 
@@ -29,13 +22,13 @@ setInterval( function() {
 function giveTips(){
     // Array of tip options (file names or paths to HTML files)
     const tips = [
-        "drinkWater1.html",
-        "excersise.html",
-        "getYourSleep1.html",
-        "happy.html",
-        "helloFriends.html",
-        "studyBreak.html",
-        "taxes.html"
+        "HowToStayHealthy/drinkWater1.html",
+        "HowToStayHealthy/excersise.html",
+        "HowToStayHealthy/getYourSleep1.html",
+        "HowToStayHealthy/happy.html",
+        "HowToStayHealthy/helloFriends.html",
+        "HowToStayHealthy/studyBreak.html",
+        "HowToStayHealthy/taxes.html"
     ];
 
     // Randomly select a tip

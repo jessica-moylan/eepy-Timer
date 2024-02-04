@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-
+        body {
+            width: 800px;  /* Set your desired width */
+            height: 600px; /* Set your desired height */
+        }
         .rectangle1 {
             width: 800px;
             height: 600px;
-            top: 100px;
-            left: 350px; 
+            top: 0;
+            left: 0; 
             background-color: rgba(89, 102, 105);
             position: absolute;
             z-index: 1
@@ -18,17 +21,17 @@
             width: 600px;
             height: 250px;
             background-color: rgb(243, 222, 138);
-            top: 175px; 
-            left: 450px; 
+            top: 100px; 
+            left: 70px; 
             position: absolute;
             z-index: 2
         }
         .overlay-text {
             position: absolute;
-            top: 60px; 
-            left: 600px; 
+            top: 0px; 
+            left: 260px; 
             color: #FCC7FF; 
-            font-size: 50px; 
+            font-size: 60px; 
             z-index: 3
         }
         .blood {
@@ -47,8 +50,8 @@
             4px 24px 1px #d0cd00,
             4px 26px 1px #e0d800;
             position: absolute;
-            top: 400px; 
-            left: 450px; 
+            top: 300px; 
+            left: 250px; 
             font-size: 50px; 
             z-index: 3
     }
@@ -65,27 +68,26 @@
             left: 525px;
             z-index: 2;
 }
-        .time1 {
-            position: absolute;
-            top: 2px; 
-            left: 525px; 
-            color: #300732; 
-            font-size: 175px; 
-            z-index: 3;
-        }
-
-.button1 {background-color: #FCC7FF;}
-    </style>
+    .time1 {
+        position: absolute;
+        top: 0px; 
+        left: 125px; 
+        color: #300732; 
+        font-size: 175px; 
+        z-index: 3;
+    }
+    .button1 {background-color: #FCC7FF;}
+</style>
 </head>
 <body>
     <div class="container">
         <div style = "border-radius: 40px" class ="rectangle1"></div>
-        <div style = "border-radius: 40px" class="rectangle2"></div>
-        <p style = "font-family: cursive;" class = "overlay-text"> EEPY TIMER </p>
-        <p style = "font-family: cursive;" class = "time1"> 00:00 </p>
+        <div class="rectangle2"></div>
+        <h1 style = "font-family: cursive;" class = "overlay-text"> EEPY TIMER </h1>
+        <h1 style = "font-family: cursive;" class = "time1"> 00:00 </h1>
         <h1 style = "font-family: cursive;" class="blood">Don't make Eepy mad and <br>
             GO TO BED!</h1>
-<button style = "border-radius: 40px" style = "font-family: cursive;" class="button" onclick="alert('Your sleep time has been moved back 10 minutes.')">Delay sleep time for 10 minutes</button>
+        <button style = "border-radius: 40px" style = "font-family: cursive;" class="button" onclick="alert('Your sleep time has been moved back 10 minutes.')">Delay sleep time for 10 minutes</button>
     </div>
 </body>
 </html>
