@@ -55,13 +55,19 @@ function randomizeTabs(){
 }
 
 function moveWindow(){
-    chrome.windows.getCurrent(function(currentWindow){
-        let howManyIterations = 128;
-        let resolution = document.getElementById("resolution");
-        for (let i = 0; i < howManyIterations; i++) {
-            let winXPos = Math.floor((Math.cos(i/2)+1)*resolution/2);
-            let winYPos = Math.floor((Math.sin(i)+1)*resolution/2);
-            chrome.windows.update(currentWindow.id,{"state": "normal", "left": winXPos,"top": winYPos});
-        }
-    });
+    chrome.windows.getCurrent(function(currentWindow){ 
+        chrome.storage.local.get().then((result) => {
+            let height = result["screenHeight"];
+            let width = result["screenWidth"];
+        
+            let howManyIterations = 128;
+            
+            for (let i = 0; i < howManyIterations; i++) {
+                let winXPos = Math.floor((Math.cos(i/2)+1)*width/2);
+                let winYPos = Math.floor((Math.sin(i)+1)*height/2);
+                chrome.windows.update(currentWindow.id,{"state": "normal", "left": winXPos,"top": winYPos});
+            }
+        });
+    }); 
+
 }
