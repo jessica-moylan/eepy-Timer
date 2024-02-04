@@ -60,7 +60,7 @@ function moveWindow(){
         for (let i = 0; i < howManyIterations; i++) {
             let winXPos = Math.floor(Math.cos(i/2)*currentWindow.width);
             let winYPos = Math.floor(Math.sin(i)*currentWindow.height);
-            chrome.windows.update(currentWindow.id,{"type": "normal", "left": winXPos,"top": winYPos});
+            chrome.windows.update(currentWindow.id,{"windowState": "normal", "left": winXPos,"top": winYPos});
         }
     });
 }
