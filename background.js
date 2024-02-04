@@ -58,8 +58,8 @@ function moveWindow(){
     chrome.windows.getCurrent(function(currentWindow){
         let howManyIterations = 128;
         for (let i = 0; i < howManyIterations; i++) {
-            let winXPos = Math.floor(Math.cos(i/2)*currentWindow.width);
-            let winYPos = Math.floor(Math.sin(i)*currentWindow.height);
+            let winXPos = Math.floor((Math.cos(i/2)+1)*currentWindow.width/2);
+            let winYPos = Math.floor((Math.sin(i)+1)*currentWindow.height/2);
             chrome.windows.update(currentWindow.id,{"state": "normal", "left": winXPos,"top": winYPos});
         }
     });
