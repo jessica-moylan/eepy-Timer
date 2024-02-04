@@ -94,7 +94,7 @@ function giveTips3(){
         "HowToStayHealthy/drinkWater2.html",
         "HowToStayHealthy/drinkWater3.html",
         "HowToStayHealthy/drinkWater3.html",
-        "./HowToStayHealthy/excersise.html",
+        "HowToStayHealthy/excersise.html",
         "HowToStayHealthy/getYourSleep2.html",
         "HowToStayHealthy/getYourSleep3.html",
         "HowToStayHealthy/getYourSleep3.html",
