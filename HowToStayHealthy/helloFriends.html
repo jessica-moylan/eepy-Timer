@@ -1,0 +1,62 @@
+<!--Animation Sourced from https://codepen.io/achristian/pen/WbzgMx-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+   .box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #473664;
+        width: 300px; /* Adjust the width to 300px */
+        height: 400px; /* Adjust the height to 400px */
+        box-shadow: inset 0 0 20px #3b2462;
+        border-radius: 20px;
+        border: 1px solid #111;
+        overflow: hidden;
+    }
+
+    .box img {
+        width: 40px; /* Adjust the width to make the image larger */
+        height: 40px; /* Adjust the height to make the image larger */
+        border-radius: 50%;
+        position: absolute;
+        -webkit-animation: moveX 3s linear 0s infinite alternate, moveY 4.8s linear 0s infinite alternate;
+        -moz-animation: moveX 3s linear 0s infinite alternate, moveY 4.8s linear 0s infinite alternate;
+        -o-animation: moveX 3s linear 0s infinite alternate, moveY 4.8s linear 0s infinite alternate;
+        animation: moveX 3s linear 0s infinite alternate, moveY 4.8s linear 0s infinite alternate;
+    }
+
+    @-webkit-keyframes moveX {
+        from { left: 0; } to { left: 260px; } /* Adjust the end position to match the collision box width */
+    }
+    @-moz-keyframes moveX {
+        from { left: 0; } to { left: 260px; } /* Adjust the end position to match the collision box width */
+    }
+    @-o-keyframes moveX {
+        from { left: 0; } to { left: 260px; } /* Adjust the end position to match the collision box width */
+    }
+    @keyframes moveX {
+        from { left: 0; } to { left: 260px; } /* Adjust the end position to match the collision box width */
+    }
+
+    @-webkit-keyframes moveY {
+        from { top: 0; } to { top: 360px; } /* Adjust the end position to match the collision box height */
+    }
+    @-moz-keyframes moveY {
+        from { top: 0; } to { top: 360px; } /* Adjust the end position to match the collision box height */
+    }
+    @-o-keyframes moveY {
+        from { top: 0; } to { top: 360px; } /* Adjust the end position to match the collision box height */
+    }
+    @keyframes moveY {
+        from { top: 0; } to { top: 360px; } /* Adjust the end position to match the collision box height */
+    }
+  </style>
+</head>
+<body>
+    <div class="box"><img src="eepyImage.png" alt="ball"></div>
+</body>
+</html>
