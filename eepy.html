@@ -10,11 +10,10 @@
 
     <button id="addTenMinutes">Add ten minutes</button>
     <script src="Scripts/addTenMinutes.js"></script>
-    <script>
-    chrome.strorage.local.set({
-      "screenHeight": window.screen.height,
-      "screenWidth": window.screen.width
-    });
-    </script>  
+    <script type="text/javascript" src="file.js"></script>
+  <script type="text/javascript">
+    MYLIBRARY.init(["somevalue", 1, "controlId"]);
+    MYLIBRARY.helloWorld();
+  </script>
   </body>
 </html>
