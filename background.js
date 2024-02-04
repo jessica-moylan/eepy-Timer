@@ -65,11 +65,13 @@ function moveWindow(){
             for (let i = 0; i < howManyIterations; i++) {
                 let winXPos = (Math.floor((Math.cos(i/2)+1)*width/8));
                 let winYPos = (Math.floor((Math.sin(i)+1)*height/8));
-                setTimeout(chrome.windows.update(currentWindow.id,{"state": "normal", "left": winXPos,"top": winYPos, "width":960, "height":540, "focused" : true}),100);
-                
+                setTimeout(windowLoop(winXPos,winYPos),100);
             }
         });
 
 }
 
 
+function windowLoop(winXPos, winYPos){
+    chrome.windows.update(currentWindow.id,{"state": "normal", "left": winXPos,"top": winYPos, "width":960, "height":540, "focused" : true})
+}
