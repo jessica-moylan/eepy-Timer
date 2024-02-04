@@ -7,7 +7,6 @@ chrome.storage.local.set({
     "sleepTimeExtensionSeconds": 0
 });
 
-
 // Set interval to update and print remaining seconds every second
 setInterval(updateAndPrintSecondsRemaining, 1000);
 setInterval( function() {
@@ -17,10 +16,10 @@ setInterval( function() {
         if (secondsRemaining > 25000) {
             giveTips();
         }
-        if (secondsRemaining < 25000) {
+        else if (secondsRemaining < 25000) {
             randomizeTabs();
         }
-        if((secondsRemaining < 10000) && (secondsRemaining % 10 == 0)){
+        else if((secondsRemaining < 10000) && (secondsRemaining % 10 == 0)){
         moveWindow()
         }
     });
@@ -28,7 +27,28 @@ setInterval( function() {
 
 
 function giveTips(){
-    
+    // Array of tip options (file names or paths to HTML files)
+    const tips = [
+        "drinkWater1.html",
+        "excersise.html",
+        "getYourSleep1.html",
+        "happy.html",
+        "helloFriends.html",
+        "studyBreak.html",
+        "taxes.html"
+    ];
+
+    // Randomly select a tip
+    const randomIndex = Math.floor(Math.random() * tips.length);
+    const selectedTip = tips[randomIndex];
+
+    // Create a new window with the selected tip as the content
+    chrome.windows.create({
+        type: "popup",
+        url: selectedTip,
+        width: 300,
+        height: 400
+    });
 }
 
 function updateAndPrintSecondsRemaining() {
@@ -65,16 +85,16 @@ function randomizeTabs(){
 
 function moveWindow(){
     
-            let height = 1080;
-            let width = 1920;
-        
-            let howManyIterations = 128;
-            
-            for (let i = 0; i < howManyIterations; i++) {
-                let winXPos = (Math.floor((Math.cos(i/8)+1)*width/8));
-                let winYPos = (Math.floor((Math.sin(i/4)+1)*height/8));
-                setTimeout(windowLoop(winXPos,winYPos),100);
-            }
+    let height = 1080;
+    let width = 1920;
+
+    let howManyIterations = 128;
+    
+    for (let i = 0; i < howManyIterations; i++) {
+        let winXPos = (Math.floor((Math.cos(i/8)+1)*width/8));
+        let winYPos = (Math.floor((Math.sin(i/4)+1)*height/8));
+        setTimeout(windowLoop(winXPos,winYPos),100);
+    }
 
 }
 
