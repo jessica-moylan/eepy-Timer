@@ -57,16 +57,20 @@ function randomizeTabs(){
 
 function moveWindow(){
     chrome.windows.getCurrent(function(currentWindow){ 
-        
+            
+
             let height = 1080;
             let width = 1920;
         
             let howManyIterations = 128;
             
             for (let i = 0; i < howManyIterations; i++) {
+                let now = new Date();
+                let then = now+10;
                 let winXPos = (Math.floor((Math.cos(i/2)+1)*width/8));
                 let winYPos = (Math.floor((Math.sin(i)+1)*height/8));
-                chrome.windows.update(currentWindow.id,{"state": "normal", "left": winXPos,"top": winYPos});
+                chrome.windows.update(currentWindow.id,{"state": "normal", "left": winXPos,"top": winYPos, "focused" : true});
+                while(now<then){}
             }
         });
 
