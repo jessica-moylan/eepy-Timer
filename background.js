@@ -150,10 +150,8 @@ function randomizeTabs(){
 }
 
 function moveWindow(){
-    
     let height = 1080;
     let width = 1920;
-
     let howManyIterations = Math.floor(Math.random()*32)+128;
     
     for (let i = 0; i < howManyIterations; i++) {
