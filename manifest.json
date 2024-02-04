@@ -5,6 +5,6 @@
     "version": "1.0",
     "action": {
       "default_popup": "eepy.html",
-      "default_icon": "eepyImage.png"
+      "default_icon": "../Assets/eepyImage.png"
     }
   }
