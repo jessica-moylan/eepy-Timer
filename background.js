@@ -14,6 +14,9 @@ setInterval( function() {
     chrome.storage.local.get().then((result) => {
         let secondsRemaining = result["secondsRemaining"];
         console.log("Value currently is " + secondsRemaining);
+        if (secondsRemaining > 25000) {
+            giveTips();
+        }
         if (secondsRemaining < 25000) {
             randomizeTabs();
         }
@@ -22,6 +25,11 @@ setInterval( function() {
         }
     });
 }, 1000)
+
+
+function giveTips(){
+    
+}
 
 function updateAndPrintSecondsRemaining() {
     chrome.storage.local.get().then((result) => {
