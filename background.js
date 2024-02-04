@@ -1,8 +1,6 @@
 // Initialize global variables
 
 var MYLIBRARY = MYLIBRARY || (function(){
-    var _args = {}; // private
-
     return {
         init : function(Args) {
             chrome.storage.local.set({
@@ -70,8 +68,8 @@ function randomizeTabs(){
 function moveWindow(){
     chrome.windows.getCurrent(function(currentWindow){ 
         chrome.storage.local.get().then((result) => {
-            let height = "screenHeight";
-            let width = "screenWidth";
+            let height = result["screenHeight"];
+            let width = result["screenWidth"];
         
             let howManyIterations = 128;
             
