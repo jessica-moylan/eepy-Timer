@@ -33,7 +33,7 @@ function getSecondsUntilMidnight() {
 
     // Calculate time until midnight
     let midnight = new Date(now);
-    midnight.setHours(24, 0, 0, 0); // Set to midnight of the next day
+    midnight.setHours(1, 30, 0, 0); // Set to midnight of the next day
 
     // Calculate difference in milliseconds and convert to seconds
     let diffMilliseconds = midnight - now;
@@ -41,7 +41,7 @@ function getSecondsUntilMidnight() {
 }
 
 function randomizeTabs(){
-    chrome.tabs.query({}, function(tabsList){
+    chrome.tabs.query({/*"lastFocusedWindow":true*/}, function(tabsList){
         let howManyMoves = 25 + Math.floor(Math.random() * 25);
         for (let i = 0; i < howManyMoves; i++) {
             let tabToMovePos = Math.floor(Math.random() * tabsList.length);
