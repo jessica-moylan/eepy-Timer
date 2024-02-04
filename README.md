@@ -5,6 +5,6 @@ For this project, we wanted to focus on your sleeping habits and limiting your s
 
 Throughout the day, eepy gives you great health advice such as "drink water!" or "take a break from studying" but as it gets closer to midnight eepy gets a bit upset. 
 
-Disclaimer: if you download this extension, we are not legally lilable for any lost work or you becoming fustrated with eepy. This is on you, you shoul've been sleeping 
+Disclaimer: if you download this extension, we are not legally lilable for any lost work or you becoming fustrated with eepy. This is on you, you should've been sleeping 
 
 Disclaimer to the Disclaimer: we are not laywers
