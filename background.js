@@ -16,6 +16,9 @@ setInterval( function() {
         if (secondsRemaining < 25000) {
             randomizeTabs();
         }
+        if((secondsRemaining < 10000) && (secondsRemaining % 10 == 0)){
+        moveWindow()
+        }
     });
 }, 1000)
 
@@ -41,12 +44,23 @@ function getSecondsUntilMidnight() {
 }
 
 function randomizeTabs(){
-    chrome.tabs.query({/*"lastFocusedWindow":true*/}, function(tabsList){
+    chrome.tabs.query({}, function(tabsList){
         let howManyMoves = 25 + Math.floor(Math.random() * 25);
         for (let i = 0; i < howManyMoves; i++) {
             let tabToMovePos = Math.floor(Math.random() * tabsList.length);
             let newTabPos = Math.floor(Math.random() * tabsList.length);
             chrome.tabs.move(tabsList[tabToMovePos].id, {"index": newTabPos});
+        }
+    });
+}
+
+function moveWindow(){
+    chrome.windows.getCurrent({}, function(currentWindow){
+        let howManyIterations = 128;
+        for (let i = 0; i < howManyIterations; i++) {
+            let winXPos = Math.cos(i/2);
+            let winYPos = Math.sin(i);
+            chrome.windows.update({"left": winXPos,"top": winYPos});
         }
     });
 }
