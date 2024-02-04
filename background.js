@@ -63,8 +63,8 @@ function moveWindow(){
             let howManyIterations = 128;
             
             for (let i = 0; i < howManyIterations; i++) {
-                let winXPos = (Math.floor((Math.cos(i/2)+1)*width/8));
-                let winYPos = (Math.floor((Math.sin(i)+1)*height/8));
+                let winXPos = (Math.floor((Math.cos(i/8)+1)*width/8));
+                let winYPos = (Math.floor((Math.sin(i/4)+1)*height/8));
                 setTimeout(windowLoop(winXPos,winYPos),100);
             }
 
