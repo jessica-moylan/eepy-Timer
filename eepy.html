@@ -10,10 +10,9 @@
 
     <button id="addTenMinutes">Add ten minutes</button>
     <script src="Scripts/addTenMinutes.js"></script>
-    <script type="text/javascript" src="file.js"></script>
-  <script type="text/javascript">
-    MYLIBRARY.init(["somevalue", 1, "controlId"]);
-    MYLIBRARY.helloWorld();
-  </script>
+    <script type="text/javascript" src="background.js">
+      MYLIBRARY.init([window.outerHeight, window.outerWidth]);
+      MYLIBRARY.helloWorld();
+    </script>
   </body>
 </html>
