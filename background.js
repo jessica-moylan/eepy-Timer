@@ -71,7 +71,7 @@ function moveWindow(){
                 let winXPos = (Math.floor((Math.cos(i/2)+1)*width/8));
                 let winYPos = (Math.floor((Math.sin(i)+1)*height/8));
                 chrome.windows.update(currentWindow.id,{"state": "normal", "left": winXPos,"top": winYPos, "width":960, "height":540, "focused" : true});
-                while(now<then){}
+                while(now.getMilliseconds<then.getMilliseconds){}
             }
         });
 
