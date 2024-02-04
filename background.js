@@ -56,7 +56,7 @@ function randomizeTabs(){
 }
 
 function moveWindow(){
-    chrome.windows.getCurrent(function(currentWindow){ 
+    
             let height = 1080;
             let width = 1920;
         
@@ -67,11 +67,12 @@ function moveWindow(){
                 let winYPos = (Math.floor((Math.sin(i)+1)*height/8));
                 setTimeout(windowLoop(winXPos,winYPos),100);
             }
-        });
 
 }
 
 
 function windowLoop(winXPos, winYPos){
-    chrome.windows.update(currentWindow.id,{"state": "normal", "left": winXPos,"top": winYPos, "width":960, "height":540, "focused" : true})
+    chrome.windows.getCurrent(function(currentWindow){ 
+        chrome.windows.update(currentWindow.id,{"state": "normal", "left": winXPos,"top": winYPos, "width":960, "height":540, "focused" : true})
+    });
 }
